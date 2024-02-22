@@ -10,4 +10,5 @@ html2text==2018.1.9
 python-decouple==3.1
 pytz==2018.9
 requests==2.21.0
-crispy_bootstrap4
+crispy-bootstrap4==2023.1
+psycopg2==2.9.9
