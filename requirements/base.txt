@@ -12,3 +12,4 @@ pytz==2018.9
 requests==2.21.0
 crispy-bootstrap4==2023.1
 psycopg2==2.9.9
+django-utils-six
