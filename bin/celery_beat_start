@@ -1,0 +1,4 @@
+#!/bin/bash
+
+celery beat -A nstm --loglevel=INFO
+

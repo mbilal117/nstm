@@ -1,0 +1,25 @@
+#!/bin/bash
+
+NAME="nstm"
+DIR=/home/NSTM/NSTM
+USER=NSTM
+GROUP=NSTM
+WORKERS=3
+BIND=unix:/home/NSTM/run/gunicorn.sock
+DJANGO_SETTINGS_MODULE=NSTM.production_settings
+DJANGO_WSGI_MODULE=NSTM.wsgi
+LOG_LEVEL=error
+
+source /home/NSTM/venv/bin/activate
+
+export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
+export PYTHONPATH=$DIR:$PYTHONPATH
+
+exec /home/NSTM/venv/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+  --name $NAME \
+  --workers $WORKERS \
+  --user=$USER \
+  --group=$GROUP \
+  --bind=$BIND \
+  --log-level=$LOG_LEVEL \
+  --log-file=-
