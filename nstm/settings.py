@@ -246,3 +246,5 @@ nstm_HTTPS_ONLY = config('nstm_HTTPS_ONLY', default=False, cast=bool)
 MAILGUN_API_KEY = config('MAILGUN_API_KEY', default='')
 
 MAILGUN_API_BASE_URL = config('MAILGUN_API_BASE_URL', default='')
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
