@@ -16,7 +16,7 @@ MIDDLEWARE.insert(security_middleware_index + 1, 'whitenoise.middleware.WhiteNoi
 # STATIC FILES SETTINGS
 # ==============================================================================
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STORAGES = {
     "staticfiles": {
