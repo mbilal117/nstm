@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.humanize',
+    'django.contrib.admin',
 
     'debug_toolbar',
     'crispy_forms',

@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib import admin
 from django.urls import include, path
 
 from nstm.apps.core import views as core_views
@@ -16,6 +17,7 @@ urlpatterns = [
     path('campaigns/', include('nstm.apps.campaigns.urls', namespace='campaigns')),
     path('<slug:mailing_list_slug>/', core_views.subscribe_shortcut, name='subscribe_shortcut'),
     path('<slug:mailing_list_slug>/unsubscribe/', core_views.unsubscribe_shortcut, name='unsubscribe_shortcut'),
+    path('admin/', admin.site.urls)
 ]
 
 
