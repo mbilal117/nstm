@@ -7,6 +7,7 @@ from nstm.apps.core import views as core_views
 urlpatterns = [
     path('', core_views.dashboard, name='dashboard'),
     path('', include('nstm.apps.subscribers.urls', namespace='subscribers')),
+    path('admin/', admin.site.urls),
     path('setup/', core_views.setup, name='setup'),
     path('setup/account/', core_views.setup_account, name='setup_account'),
     path('settings/', core_views.SiteUpdateView.as_view(), name='settings'),
@@ -17,7 +18,6 @@ urlpatterns = [
     path('campaigns/', include('nstm.apps.campaigns.urls', namespace='campaigns')),
     path('<slug:mailing_list_slug>/', core_views.subscribe_shortcut, name='subscribe_shortcut'),
     path('<slug:mailing_list_slug>/unsubscribe/', core_views.unsubscribe_shortcut, name='unsubscribe_shortcut'),
-    path('admin/', admin.site.urls)
 ]
 
 
