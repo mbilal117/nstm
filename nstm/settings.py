@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.humanize',
-    'django.contrib.admin',
 
     'debug_toolbar',
     'crispy_forms',
@@ -41,6 +40,9 @@ INSTALLED_APPS = [
     'nstm.apps.lists',
     'nstm.apps.notifications',
     'nstm.apps.subscribers',
+
+    'django.contrib.admin',
+
 ]
 
 SITE_ID = 1
@@ -241,7 +243,7 @@ CELERY_TASK_ALWAYS_EAGER = config('CELERY_TASK_ALWAYS_EAGER', default=True, cast
 # FIRST-PARTY APPS SETTINGS
 # ==============================================================================
 
-nstm_HTTPS_ONLY = config('nstm_HTTPS_ONLY', default=False, cast=bool)
+NSTM_HTTPS_ONLY = config('NSTM_HTTPS_ONLY', default=False, cast=bool)
 
 MAILGUN_API_KEY = config('MAILGUN_API_KEY', default='')
 

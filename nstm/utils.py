@@ -97,7 +97,7 @@ def get_absolute_url(urlname: str, kwargs: dict = None) -> str:
     :param kwargs: Dictionary of necessary arguments to reverse the urlname
     :return: The absolute URL to a given internal URL
     """
-    protocol = 'https' if settings.nstm_HTTPS_ONLY else 'http'
+    protocol = 'https' if settings.NSTM_HTTPS_ONLY else 'http'
     site = get_current_site(request=None)
     path = reverse(urlname, kwargs=kwargs)
     absolute_url = '%s://%s%s' % (protocol, site.domain, path)

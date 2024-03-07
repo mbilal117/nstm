@@ -75,7 +75,10 @@
             <a class="dropdown-item" href="{% url 'settings' %}">{% trans 'Account settings' %}</a>
             <a class="dropdown-item" href="{% url 'password_change' %}">{% trans 'Change password' %}</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Log out' %}</a>
+              <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="dropdown-item btn btn-link">{% trans 'Log out' %}</button>
+            </form>
           </div>
         </li>
       </ul>
@@ -93,7 +96,13 @@
     </div>
   {% endblock main %}
 {% endblock body %}
+{% block footer %}
+  <footer class="text-center text-lg-start fixed-bottom">
+    <div class="text-center">Copyright @2024 All rights reserved</div>
+  </footer>
+{% endblock %}
 <div id="notificationsContainer"></div>
+
 <script src="{% static 'vendor/jquery-3.3.1.min.js' %}"></script>
 <script src="{% static 'vendor/popper.js-1.14.6/umd/popper.min.js' %}"></script>
 <script src="{% static 'vendor/bootstrap-4.2.1/js/bootstrap.min.js' %}"></script>
