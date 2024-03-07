@@ -194,6 +194,7 @@ class PasteImportSubscribersForm(forms.Form):
 
 
 class MailingListSMTPForm(forms.ModelForm):
+    smtp_password = forms.CharField(widget=forms.PasswordInput)
     class Meta:
         model = MailingList
         fields = ('smtp_host', 'smtp_port', 'smtp_username', 'smtp_password', 'smtp_use_tls', 'smtp_use_ssl',
