@@ -250,3 +250,12 @@ MAILGUN_API_KEY = config('MAILGUN_API_KEY', default='')
 MAILGUN_API_BASE_URL = config('MAILGUN_API_BASE_URL', default='')
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# ==============================================================================
+# X-FRAME SETTINGS
+# ==============================================================================
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+XS_SHARING_ALLOWED_METHODS = ['POST','GET','OPTIONS', 'PUT', 'DELETE']
