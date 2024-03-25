@@ -37,15 +37,15 @@ PRIVATE_MEDIA_ROOT = os.path.join(BASE_DIR, 'media/private')
 # EMAIL SETTINGS
 # ==============================================================================
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#
-# EMAIL_HOST = config('MAILGUN_SMTP_SERVER')
-#
-# EMAIL_PORT = config('MAILGUN_SMTP_PORT', cast=int)
-#
-# EMAIL_HOST_USER = config('MAILGUN_SMTP_LOGIN')
-#
-# EMAIL_HOST_PASSWORD = config('MAILGUN_SMTP_PASSWORD')
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = config('MAILGUN_SMTP_SERVER')
+
+EMAIL_PORT = config('MAILGUN_SMTP_PORT', cast=int)
+
+EMAIL_HOST_USER = config('MAILGUN_SMTP_LOGIN')
+
+EMAIL_HOST_PASSWORD = config('MAILGUN_SMTP_PASSWORD')
 
 
 # ==============================================================================
